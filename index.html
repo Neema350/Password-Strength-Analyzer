@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Password Strength Analyzer</h1>
+            <p>Create and verify strong passwords with real-time analysis</p>
+        </header>
 
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Password Input Section -->
+            <div class="input-section">
+                <div class="password-input-wrapper">
+                    <label for="password-input" class="input-label">Enter Password</label>
+                    <div class="password-input-container">
+                        <input 
+                            type="password" 
+                            id="password-input" 
+                            class="password-input" 
+                            placeholder="Type your password here..."
+                            autocomplete="off"
+                        >
+                        <button class="toggle-password-btn" id="toggle-password-btn" title="Show/Hide Password">
+                            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Password Length Display -->
+                <div class="password-length">
+                    <span id="password-length">0</span>/<span>128</span> characters
+                </div>
+            </div>
+
+            <!-- Strength Indicator Section -->
+            <div class="strength-section">
+                <div class="strength-header">
+                    <label>Password Strength</label>
+                    <span class="strength-text" id="strength-text">-</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p class="strength-description" id="strength-description">Start typing to analyze your password</p>
+            </div>
+
+            <!-- Requirements Checklist -->
+            <div class="requirements-section">
+                <h3>Requirements</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-item" id="req-length">
+                        <span class="requirement-icon">✓</span>
+                        <span class="requirement-text">At least 8 characters</span>
+                    </div>
+                    <div class="requirement-item" id="req-uppercase">
+                        <span class="requirement-icon">✓</span>
+                        <span class="requirement-text">Uppercase letter (A-Z)</span>
+                    </div>
+                    <div class="requirement-item" id="req-lowercase">
+                        <span class="requirement-icon">✓</span>
+                        <span class="requirement-text">Lowercase letter (a-z)</span>
+                    </div>
+                    <div class="requirement-item" id="req-number">
+                        <span class="requirement-icon">✓</span>
+                        <span class="requirement-text">Number (0-9)</span>
+                    </div>
+                    <div class="requirement-item" id="req-special">
+                        <span class="requirement-icon">✓</span>
+                        <span class="requirement-text">Special character (!@#$%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div class="suggestions-section" id="suggestions-section" style="display: none;">
+                <h3>Improvement Suggestions</h3>
+                <ul class="suggestions-list" id="suggestions-list"></ul>
+            </div>
+
+            <!-- Action Buttons Section -->
+            <div class="actions-section">
+                <button class="btn btn-primary" id="generate-btn">
+                    <span class="btn-icon">🔐</span>
+                    Generate Strong Password
+                </button>
+                <button class="btn btn-secondary" id="copy-btn" disabled>
+                    <span class="btn-icon">📋</span>
+                    Copy Password
+                </button>
+                <button class="btn btn-secondary" id="clear-btn">
+                    <span class="btn-icon">🗑️</span>
+                    Clear
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with ❤️ | Password Strength Analyzer v1.0</p>
+        </footer>
+    </div>
+
+    <!-- Tooltip for copy button -->
+    <div class="tooltip" id="tooltip">Copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
