@@ -40,5 +40,5 @@ A professional, feature-rich web application for analyzing password strength in 
 
 1. **Clone or download** the project files:
 ```bash
-git clone https://github.com/Neema350/Password-Strength-Analyzer.git
+git clone https://github.com/Neema350/Password Strength Analyzer.git
 cd Password-Strength-Analyzer
